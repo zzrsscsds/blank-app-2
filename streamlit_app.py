@@ -21,7 +21,6 @@ import logging
 from datetime import datetime, timedelta
 from newsapi import NewsApiClient
 import warnings
-import test
 
 
 
