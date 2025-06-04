@@ -102,6 +102,16 @@ def load_recent_news():
         news_df['sentiment'] = news_df['text'].apply(compute_sentiment)
         news_df['topic'] = extract_topics(news_df['text'].tolist())
         return news_df
+        daily_social_df_test = pd.read_csv("2025-05-30T04-41_export.csv")
+daily_social_df_test['date'] = pd.to_datetime(daily_social_df_test['date'])
+if 'is_media' not in daily_social_df_test.columns:
+    daily_social_df_test['is_media'] = 0
+
+news_daily_test = pd.DataFrame({
+    'date': pd.date_range(start='2025-06-01', periods=7, freq='D'),
+    'sentiment': [0.2, 0.1, 0.3, -0.1, 0.0, 0.25, 0.15],
+    'topic': [0, 1, 0, 2, 1, 0, 1]
+})
     except Exception as e:
         st.warning(f"Failed to fetch news: {e}")
         return pd.DataFrame()
