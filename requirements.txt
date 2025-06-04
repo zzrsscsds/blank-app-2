@@ -1,11 +1,11 @@
 streamlit
-nltk
-scikit-learn
 pandas
-matplotlib
 numpy
-seaborn
+nltk
+matplotlib
 wordcloud
+scikit-learn
+xgboost
+prophet
 statsmodels
-praw
-textblob
+newsapi-python
